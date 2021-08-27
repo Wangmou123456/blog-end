@@ -40,6 +40,7 @@ class LabelService {
     LIMIT ?, ?;
     `;
     const [result] = await connection.execute(statement, [offset, limit]);
+    console.log(result);
     return result;
   }
 

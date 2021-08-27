@@ -13,6 +13,7 @@ class LabelController {
     const { limit, offset } = ctx.query;
     console.log(limit, offset);
     const result = await LabelService.getLabels(limit, offset);
+    console.log(result);
 
     ctx.body = {
       code: 200,

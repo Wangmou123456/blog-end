@@ -53,6 +53,7 @@ class BlogService {
     WHERE b.id = ?;
     `;
     const [result] = await connection.execute(statement, [blogId]);
+    console.log(result);
     return result;
   }
 
