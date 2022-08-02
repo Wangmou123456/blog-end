@@ -50,7 +50,8 @@ class BlogService {
     LEFT JOIN blog_label bl ON b.id = bl.blog_id
     LEFT JOIN label l ON bl.label_id = l.id
 
-    WHERE b.id = ?;
+    WHERE b.id = ?
+    GROUP BY b.id;
     `;
     const [result] = await connection.execute(statement, [blogId]);
     console.log(result);
